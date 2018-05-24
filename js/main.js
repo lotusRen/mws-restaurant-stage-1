@@ -10,6 +10,7 @@ var markers = []
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
+  
 });
 
 /**
@@ -141,6 +142,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute('alt',restaurant.name);     //给图片添加alt属性，增加可以访问性
   li.append(image);
 
   const name = document.createElement('h1');
@@ -156,6 +158,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('a');
+   more.setAttribute('title',"this's a button to understanding of the "+restaurant.name +"  details");        //给每个查看详情按钮添加说明
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
@@ -176,3 +179,15 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 }
+//=============================离线缓存================================
+
+if(navigator.serviceWorker){
+		navigator.serviceWorker.register('js/cache.js').then(function(reg){
+		console.log(reg);
+		}).catch(function(err){
+			console.log(err)
+		})
+}
+
+
+

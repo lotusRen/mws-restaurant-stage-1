@@ -32,6 +32,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px;
 }
+.clearFix:after{
+	content:'';
+	display: block;
+	clear:both;
+}
+
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -106,9 +112,9 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  height: 50px;
   background-color: #3397DB;
   align-items: center;
+  padding-top:10px;
 }
 .filter-options h2 {
   color: white;
@@ -133,19 +139,20 @@ nav h1 a {
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
-  margin: 0;
+  margin: 0 auto;
   padding: 30px 15px 60px;
-  text-align: center;
+  width:1060px;
 }
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
+  margin: 8px;
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
   width: 270px;
+  float: left;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -206,6 +213,7 @@ nav h1 a {
   bottom: 0;
   position: absolute;
   width: 50%;
+  box-sizing: border-box;
 }
 #restaurant-name {
   color: #f18200;
@@ -263,13 +271,119 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 10px 20px 20px;
   position: relative;
   width: 85%;
+  box-sizing: border-box;
 }
 #reviews-list li p {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/*=================inside里移动设备==================================================*/
+@media only screen and (max-width:1040px ) {
+	#breadcrumb {                      
+		 width: calc(100% - 80px);
+	}
+	.inside #footer{
+		width:100%;
+	}
+	.inside #map-container{              /*移动端地图设置*/
+		width:100%;
+		position: relative;
+		top:130px;
+		height: 500px;
+	}
+	#restaurant-container{                     /* 餐厅图片时间等的设置*/
+		width:100%;
+		box-sizing: border-box;
+		padding:140px 60px 30px;
+	}
+	#restaurant-img,#restaurant-cuisine,#restaurant-hours,#restaurant-address{
+		width:100%;
+	}
+	#reviews-container{                          /*详情里面的列表*/
+		width:100%;
+		box-sizing: border-box;
+		padding: 30px 60px 80px;		    
+	}
+	#reviews-list li {          
+		padding:0;
+		width:100%;
+	}
+	#reviews-list li p{                   /* 设置移动设备中列表的样式*/
+		padding:10px 30px;
+		font-size:20px;
+	}	
+	#reviews-list li div{                 /*列表黑色列表头部*/
+		background: #333333;		
+	}
+	#reviews-list li div p{
+		color:white;
+		font-size: 24px;
+		float:left;
+	}
+	#reviews-list li div p:nth-of-type(2){
+		float:right;
+		color:#b5b5b5;
+		font-size: 20px;
+	}
+	.Rating{                              /*Rating样式设置*/
+		background:#f4a221;
+		width:120px;
+		border-radius: 4px;
+		margin: 20px 30px !important;
+		color:white;
+		font-size: 24px;
+		padding:4px 20px!important;
+		font-weight: bold;
+	}
+	#restaurant-img,#reviews-list li{         /*inside里图片和下面列表的圆角设置*/
+		border-top-left-radius: 50px;
+		border-bottom-right-radius: 50px;
+	}
+	#restaurants-list{                           
+		width:70%;
+	}
+}
+@media only screen and (max-width:800px ) {	
+	#restaurants-list{              /*主页列表*/
+		width:92%;
+	}
+}
+@media only screen and (max-width:699px ) {
+	#restaurant-container{                  /* 餐厅图片时间，列表等大小的设置*/
+		padding:140px 20px 30px;
+	}
+	#reviews-container{
+		padding: 30px 20px 80px;		
+	}
+	.inside #map-container{
+		height: 300px;
+	}
+	#restaurants-list{         /*主页列表*/
+		width:100%;
+		text-align: center;
+		padding:0;
+	}
+	#restaurants-list li{
+		float:none;
+		margin:10px auto;
+	}
+}
+@media only screen and (max-width:400px ){
+	#reviews-list li p{
+		font-size: 18px;
+	}
+	#reviews-list li div p{
+		padding-right:0;
+		font-size: 20px;
+	}
+	#reviews-list li div p:nth-of-type(2){
+		padding:14px 20px 10px 0;
+		font-size: 16px;
+	}
 }
