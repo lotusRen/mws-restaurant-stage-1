@@ -37,7 +37,6 @@ h1, h2, h3, h4, h5, h6 {
 	display: block;
 	clear:both;
 }
-
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -108,6 +107,11 @@ nav h1 a {
   height: 400px;
   width: 100%;
   background-color: #ccc;
+}
+/*===============================selector==============*/
+#neighborhoods-select:focus,#cuisines-select:focus{
+	outline-color: #f79343;
+	border:1px solid #ba8112;
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
@@ -288,31 +292,27 @@ nav h1 a {
 	#breadcrumb {                      
 		 width: calc(100% - 80px);
 	}
-	.inside #footer{
-		width:100%;
+	#breadcrumb li a{
+		font-size: 18px;
 	}
 	.inside #map-container{              /*移动端地图设置*/
-		width:100%;
 		position: relative;
 		top:130px;
 		height: 500px;
 	}
 	#restaurant-container{                     /* 餐厅图片时间等的设置*/
-		width:100%;
 		box-sizing: border-box;
 		padding:140px 60px 30px;
 	}
-	#restaurant-img,#restaurant-cuisine,#restaurant-hours,#restaurant-address{
+	.inside #footer,#restaurant-img,#restaurant-cuisine,#restaurant-hours,#restaurant-address,.inside #map-container,#restaurant-container,#reviews-container,#reviews-list li{
 		width:100%;
 	}
 	#reviews-container{                          /*详情里面的列表*/
-		width:100%;
 		box-sizing: border-box;
 		padding: 30px 60px 80px;		    
 	}
 	#reviews-list li {          
 		padding:0;
-		width:100%;
 	}
 	#reviews-list li p{                   /* 设置移动设备中列表的样式*/
 		padding:10px 30px;

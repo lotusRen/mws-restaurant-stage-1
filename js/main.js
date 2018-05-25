@@ -9,8 +9,7 @@ var markers = []
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
-  fetchCuisines();
-  
+  fetchCuisines();  
 });
 
 /**
@@ -32,6 +31,7 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
+  select.focus();
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
@@ -59,7 +59,6 @@ fetchCuisines = () => {
  */
 fillCuisinesHTML = (cuisines = self.cuisines) => {
   const select = document.getElementById('cuisines-select');
-
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
@@ -158,7 +157,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('a');
-   more.setAttribute('title',"this's a button to understanding of the "+restaurant.name +"  details");        //给每个查看详情按钮添加说明
+  more.setAttribute('role','button');                 //给按钮添加一个role属性
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
@@ -182,7 +181,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 //=============================离线缓存================================
 
 if(navigator.serviceWorker){
-		navigator.serviceWorker.register('js/cache.js').then(function(reg){
+		navigator.serviceWorker.register('../cache.js').then(function(reg){
 		console.log(reg);
 		}).catch(function(err){
 			console.log(err)

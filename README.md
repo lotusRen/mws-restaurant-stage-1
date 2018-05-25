@@ -25,4 +25,10 @@ In a terminal, check the version of Python you have: `python -V`. If you have Py
 Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
 
 
+1、利用媒体查询做了页面的响应式
+2、给添加的图片都添加了alt属性，文字说明是餐厅的名称
+3、给详情按钮添加了role=‘button’的属性
+4、主页加载完毕，All Neighborhoos 选择按钮自动获焦，详情页home按钮自动获焦
+5、修改了主页All Neighborhoos等选择按钮获焦时的样式，使其更加明显
+6、实现了serviceWorker缓存
 
