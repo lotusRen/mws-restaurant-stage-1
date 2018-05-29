@@ -181,7 +181,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 //=============================离线缓存================================
 
 if(navigator.serviceWorker){
-		navigator.serviceWorker.register('../cache.js').then(function(reg){
+		navigator.serviceWorker.register('/cache.js').then(function(reg){
 		console.log(reg);
 		}).catch(function(err){
 			console.log(err)

@@ -1,4 +1,4 @@
-var restaurantCacheName='restaurant-static-v02';
+var restaurantCacheName='restaurant-static-v01';
 self.addEventListener('install',function(event){
 	event.waitUntil(
 		caches.open(restaurantCacheName).then(function(cache){
