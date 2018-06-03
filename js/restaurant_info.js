@@ -148,8 +148,10 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
+  li.setAttribute('aria-current','page');            //给当前页面的面包屑设置aria-*属性
   breadcrumb.appendChild(li);
   breadcrumb.childNodes[1].childNodes[0].focus();
+
 }
 
 /**

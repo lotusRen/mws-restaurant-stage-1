@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8" />
@@ -19,16 +19,16 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map"  role="map"></div>
     </section>
     <section>
       <div class="filter-options">
         <h2>Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-          <option value="all">All Neighborhoods</option>
+          <option value="all" label='All Neighborhoods'>All Neighborhoods</option>            <!-- 给表单元素添加label属性-->
         </select>
         <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-          <option value="all">All Cuisines</option>
+          <option value="all"  label='All Cuisines'>All Cuisines</option>            <!-- 给表单元素添加label属性-->
         </select>
       </div>
       <ul id="restaurants-list" class="clearFix" ></ul>
