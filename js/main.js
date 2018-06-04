@@ -36,7 +36,6 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
-    option.label=neighborhood;    //给表单元素添加label
     select.append(option);
   });
 }
@@ -64,7 +63,6 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
-    option.label= cuisine;   //给表单元素添加label
     select.append(option);
   });
 }
